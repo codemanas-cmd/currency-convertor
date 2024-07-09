@@ -23,7 +23,7 @@ Check out the live demo of the application:
 
 ## Credits
 
-- Exchange rate data provided by [Fawaz Ahmed's Currency API](https://github.com/fawazahmed0/currency-api).
+- Exchange rate data provided by [Fawaz Ahmed's Currency API](https://github.com/fawazahmed0/exchange-api).
 - Hosted on [GitHub Pages](https://pages.github.com/).
 - Thanks [Hitesh Choudhary](https://www.youtube.com/@chaiaurcode)
 
