@@ -17,55 +17,51 @@ function App() {
     }
   }, [amount, from, to, conversionInfoFrom]);
 
-  const bgcUrl = 'https://images.pexels.com/photos/310452/pexels-photo-310452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2';
-  
   return (
-    <>
-      <div className='bg-black w-full h-screen flex flex-col justify-center items-center'>
-        <h1 className='font-semibold text-3xl text-white mb-12'>Currency Converter</h1>
-        <div style={{backgroundColor: 'rgba(96, 89, 77, 0.6)'}}className=' flex flex-col justify-center items-center w-full max-w-lg h-full max-h-64 rounded-3xl relative'>
-          <InputBox 
-            label='From'
-            selectCurrency={from}
-            className='relative z-10'
-            amount={amount}
-            currrencyOptions={options}
-            onAmountChange={(newAmount) => {
-              if (newAmount >= 0) {
-                setAmount(newAmount);
-              }
-            }}
-            onCurrencyChange={(newCurrency) => {
-              setFrom(newCurrency);
-            }}
-          />
-          
-          <button
-            className='my-[-6px] py-1 px-3 text-gray-100 bg-[#A63446] font-semibold rounded-md relative z-20'
-            onClick={() => {
-              setFrom(to);
-              setTo(from);
-              setAmount(convertedAmount);
-              setConvertedAmount(amount);
-            }}
-          >
-            Swap
-          </button>
-          
-          <InputBox 
-            label='To'
-            selectCurrency={to}
-            className='relative z-10'
-            amount={convertedAmount}
-            currrencyOptions={options}
-            isAmountDisabled={true}
-            onCurrencyChange={(newCurrency) => {
-              setTo(newCurrency);
-            }}
-          />
-        </div>
+    <div className='bg-gray-100 w-full h-screen flex flex-col justify-center items-center'>
+      <h1 className='font-semibold text-3xl text-gray-800 mb-12'>Currency Converter</h1>
+      <div className='bg-white shadow-lg flex flex-col justify-center items-center w-full max-w-lg h-full max-h-64 rounded-3xl p-6'>
+        <InputBox 
+          label='From'
+          selectCurrency={from}
+          className='relative z-10'
+          amount={amount}
+          currrencyOptions={options}
+          onAmountChange={(newAmount) => {
+            if (newAmount >= 0) {
+              setAmount(newAmount);
+            }
+          }}
+          onCurrencyChange={(newCurrency) => {
+            setFrom(newCurrency);
+          }}
+        />
+        
+        <button
+          className='my-[-6px] py-1 px-3 text-white bg-blue-500 font-semibold rounded-md relative z-20'
+          onClick={() => {
+            setFrom(to);
+            setTo(from);
+            setAmount(convertedAmount);
+            setConvertedAmount(amount);
+          }}
+        >
+          🔄
+        </button>
+        
+        <InputBox 
+          label='To'
+          selectCurrency={to}
+          className='relative z-10'
+          amount={convertedAmount}
+          currrencyOptions={options}
+          isAmountDisabled={true}
+          onCurrencyChange={(newCurrency) => {
+            setTo(newCurrency);
+          }}
+        />
       </div>
-    </>
+    </div>
   );
 }
 
